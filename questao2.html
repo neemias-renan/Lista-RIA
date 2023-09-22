@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Lista 6</title>
+    <link rel="stylesheet" href="src/card.css">
+</head>
+
+<body>
+    <header class="nav padding-default">
+        <p><a href="questao2.html">Lista de Usuários</a></p>
+
+        <p> <a href="pages/questao3.html">Criar novo usuário</a></p>
+    </header>
+
+    <div class="hero padding-default">
+        <h1 class="page">Usuários</h1>
+    </div>
+
+    <div id="content" class="padding-default ">
+    </div>
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/users', {
+            method: 'GET'
+        })
+            .then((response) => response.json())
+            .then((json) => {
+                for (user in json) {
+                    createDiv(json[user].name, json[user].id, json[user].email, json[user].phone, json[user].company.name, `${json[user].address.city} ${json[user].address.street} ${json[user].address.suite} ${json[user].address.zipcode}`, json[user].website)
+                }
+            })
+
+
+        function createDiv(name, id_user, email, phone, company, address, website) {
+            content = document.querySelector('#content');
+
+            newCard = document.createElement("div");
+            newCard.classList.add("card");
+            content.appendChild(newCard);
+
+            header = document.createElement('div');
+            header.classList.add("header");
+            newCard.appendChild(header);
+
+            name_head = document.createElement('h1');
+            name_head.classList.add("name");
+            name_head.innerHTML = name;
+            header.appendChild(name_head);
+
+            divID = document.createElement('div');
+            divID.classList.add("divId");
+            header.appendChild(divID);
+
+            id = document.createElement('p');
+            id.classList.add("id");
+            id.innerHTML = "ID: " + id_user;
+            divID.appendChild(id);
+
+            main = document.createElement('div');
+            main.classList.add("main");
+            newCard.appendChild(main);
+
+            datas = document.createElement('div');
+            datas.classList.add("datas");
+            main.appendChild(datas);
+
+            data1 = document.createElement('div');
+            data1.classList.add("data");
+            datas.appendChild(data1);
+
+            label1 = document.createElement('p');
+            label1.classList.add("label")
+            label1.innerHTML = "Email";
+            data1.appendChild(label1);
+
+            input1 = document.createElement('p');
+            input1.classList.add("input")
+            input1.innerHTML = email;
+            data1.appendChild(input1);
+
+            data2 = document.createElement('div');
+            data2.classList.add("data");
+            datas.appendChild(data2);
+
+            label2 = document.createElement('p');
+            label2.classList.add("label");
+            label2.innerHTML = "Telefone";
+            data2.appendChild(label2);
+
+            input2 = document.createElement('p');
+            input2.classList.add("input");
+            input2.innerHTML = phone;
+            data2.appendChild(input2);
+
+            data3 = document.createElement('div');
+            data3.classList.add("data");
+            datas.appendChild(data3);
+
+            label3 = document.createElement('p');
+            label3.classList.add("label");
+            label3.innerHTML = "Empresa";
+            data3.appendChild(label3);
+
+            input3 = document.createElement('p');
+            input3.classList.add("input");
+            input3.innerHTML = company;
+            data3.appendChild(input3);
+
+            data4 = document.createElement('div');
+            data4.classList.add("data");
+            datas.appendChild(data4);
+
+            label4 = document.createElement('p');
+            label4.classList.add("label");
+            label4.innerHTML = "Endereço";
+            data4.appendChild(label4);
+
+            input4 = document.createElement('p');
+            input4.classList.add("input");
+            input4.innerHTML = address;
+            data4.appendChild(input4);
+
+            data5 = document.createElement('div');
+            data5.classList.add("data");
+            datas.appendChild(data5);
+
+            label5 = document.createElement('p');
+            label5.classList.add("label");
+            label5.innerHTML = "website";
+            data5.appendChild(label5);
+
+            input5 = document.createElement('p');
+            input5.classList.add("input");
+            input5.innerHTML = website;
+            data5.appendChild(input5);
+
+
+            link = document.createElement('a');
+            link.classList.add("link");
+            link.href = 'pages/questao1.html';
+            main.appendChild(link);
+
+            link_web = document.createElement('p');
+            link_web.classList.add("link_web");
+            link_web.innerHTML = 'detalhar';
+            link.appendChild(link_web);
+        }
+
+
+    </script>
+</body>
+
+</html>

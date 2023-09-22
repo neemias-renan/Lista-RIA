@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 37px !important;
+  padding-bottom: 37px !important;
+  font-weight: 600;
+}
+
+.padding-default {
+  padding: 0 15em;
+}
+@media (max-width: 1500px) {
+  .padding-default {
+    padding: 0 5em;
+  }
+}
+@media (max-width: 1100px) {
+  .padding-default {
+    padding: 0 2em;
+  }
+}
+
+.hero .page {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 3em;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+}
+@media (max-width: 1500px) {
+  #content {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+@media (max-width: 1100px) {
+  #content {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+@media (max-width: 600px) {
+  #content {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+#content .card {
+  display: inline-flex;
+  padding: 53px 25px 25px 25px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: auto;
+  border-radius: 30px;
+  background: linear-gradient(36deg, #6283FF 25.55%, #B7C2FF 104.77%);
+  transition: transform 0.3s ease;
+}
+#content .card:hover {
+  transform: scale(1.05);
+}
+#content .card .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 11px;
+  align-self: stretch;
+  width: 100%;
+}
+#content .card .header .name {
+  color: #FFF;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: normal;
+}
+#content .card .header .divId {
+  display: flex;
+  width: 96px;
+  height: 28px;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background: #838DFC;
+}
+#content .card .header .divId .id {
+  color: #FFF;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: normal;
+}
+#content .card .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+#content .card .main .datas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  align-self: stretch;
+}
+#content .card .main .datas .data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+  width: 100%;
+}
+#content .card .main .datas .data .label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: normal;
+}
+#content .card .main .datas .data .input {
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+}
+#content .card .main .link {
+  display: flex;
+  width: 85%;
+  padding: 8px 15px;
+  border-radius: 25px;
+  border: 1px solid #D1DAFF;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+#content .card .main .link .link_web {
+  color: #FFF;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: normal;
+}
+#content .card .main .link:hover {
+  background-color: #D1DAFF;
+}
+
+#user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5em;
+  align-self: stretch;
+  width: 100%;
+}
+#user .label {
+  color: rgba(19, 23, 64, 0.8);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+#user .input {
+  color: #131740;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5em;
+}
+#form .form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+  align-self: stretch;
+}
+#form .form-div .label {
+  color: rgba(19, 23, 64, 0.8);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+#form .form-div .input-form {
+  color: #131740;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0.7em;
+  width: 100%;
+}
+#form .input-submit {
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: normal;
+  padding: 0.7em;
+  width: 11em;
+  background: #131740;
+  border: none;
+  cursor: pointer;
+}
+#form .input-submit:hover {
+  background: #3a4081;
+}
+
+.response {
+  margin-top: 2em;
+}
+.response #json {
+  margin-top: 1em;
+}
+.response #json pre {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  line-height: 1.4em;
+  border: 2px solid;
+  padding: 1em;
+  width: 100%;
+}
+
+/*# sourceMappingURL=card.css.map */

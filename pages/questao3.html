@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Lista 6</title>
+    <link rel="stylesheet" href="../src/card.css">
+</head>
+
+<body>
+    <header class="nav padding-default">
+        <p><a href="../questao2.html">Lista de Usuários</a></p>
+
+        <p> <a href="questao3.html">Criar novo usuário</a></p>
+    </header>
+
+    <div class="hero padding-default">
+        <h1 class="page">Criar usuário</h1>
+    </div>
+
+    <form id="form" class="padding-default">
+        <div class="form-div">
+            <label for="name" class="label">Nome Completo</label>
+            <input type="text" class="input-form" name="name" id="name">
+        </div>
+
+        <div class="form-div">
+            <label for="username" class="label">Nome do usuário</label>
+            <input type="tel" class="input-form" id="username" name="username">
+        </div>
+
+        <div class="form-div">
+            <label for="email" class="label">Email</label>
+            <input type="email" class="input-form" name="email" id="email">
+        </div>
+
+
+        <button type="submit" class="input-submit">Gravar</button>
+    </form>
+
+    <div class="response padding-default">
+        <p>Resposta em Json: </p>
+        <p id="json"></p>
+    </div>
+
+
+    <script>
+        document.querySelector('#form').addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            fetch('https://jsonplaceholder.typicode.com/users', {
+                method: 'POST',
+                body: JSON.stringify({
+                    name: document.querySelector('#name').value,
+                    username: document.querySelector('#username').value,
+                    email: document.querySelector('#email').value,
+                    id: 1,
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+                .then((response) => response.json())
+                .then((json) => {
+                    console.log(json)
+                    const jsonString = JSON.stringify(json, null, 2); 
+                    document.querySelector('#json').innerHTML = `<pre>${jsonString}</pre>`;
+                });
+
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,298 @@
+// Importando a fonte Inter do Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Definindo variáveis para fontes e tamanhos
+$font-inter: 'Inter', sans-serif;
+$font-size-label: 10px;
+$font-size-input: 12px;
+$font-size-name: 18px;
+$font-size-id: 11px;
+$font-weight-bold: 600;
+$font-weight-normal: 400;
+$line-height-normal: normal;
+
+// Definindo variáveis para cores e gradientes
+$primary-color: #6283FF;
+$secondary-color: #B7C2FF;
+$text-color: #FFF;
+$link-border-color: #D1DAFF;
+
+body {
+    font-family: $font-inter;
+}
+
+* {
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: initial;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 37px !important;
+    padding-bottom: 37px !important;
+    font-weight: 600;
+}
+
+.padding-default {
+    padding: 0 15em;
+
+    @media (max-width: 1500px) {
+        & {
+            padding: 0 5em;
+        }
+    }
+
+    @media (max-width: 1100px) {
+        & {
+            padding: 0 2em;
+        }
+    }
+}
+
+.hero {
+    .page {
+        margin-top: 2em;
+        margin-bottom: 1em;
+        font-size: 3em;
+    }
+}
+
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-column-gap: 2em;
+    grid-row-gap: 2em;
+
+    @media (max-width: 1500px) {
+        & {
+            grid-template-columns: repeat(3, auto);
+        }
+    }
+
+    @media (max-width: 1100px) {
+        & {
+            grid-template-columns: repeat(2, auto);
+        }
+    }
+
+    @media (max-width: 600px) {
+        & {
+            grid-template-columns: repeat(1, auto);
+        }
+    }
+
+    .card {
+        display: inline-flex;
+        padding: 53px 25px 25px 25px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: auto;
+        border-radius: 30px;
+        background: linear-gradient(36deg, #6283FF 25.55%, #B7C2FF 104.77%);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05); // Efeito de escala ao passar o mouse
+        }
+
+        // Estilizando o cabeçalho
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 11px;
+            align-self: stretch;
+            width: 100%;
+
+            .name {
+                color: $text-color;
+                text-align: center;
+                font-size: $font-size-name;
+                font-weight: $font-weight-bold;
+                line-height: $line-height-normal;
+            }
+
+            .divId {
+                display: flex;
+                width: 96px;
+                height: 28px;
+                padding: 5px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                border-radius: 12px;
+                background: #838DFC;
+
+                .id {
+                    color: $text-color;
+                    font-size: $font-size-id;
+                    font-weight: $font-weight-bold;
+                    line-height: $line-height-normal;
+                }
+            }
+        }
+
+        // Estilizando a seção principal
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+
+            .datas {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                align-self: stretch;
+
+                .data {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 4px;
+                    align-self: stretch;
+                    width: 100%;
+
+                    .label {
+                        color: rgba(255, 255, 255, 0.80);
+                        font-size: $font-size-label;
+                        font-weight: $font-weight-normal;
+                        line-height: $line-height-normal;
+                    }
+
+                    .input {
+                        color: $text-color;
+                        font-size: $font-size-input;
+                        font-weight: $font-weight-bold;
+                        line-height: $line-height-normal;
+                    }
+                }
+            }
+
+            .link {
+                display: flex;
+                width: 85%;
+                padding: 8px 15px;
+                border-radius: 25px;
+                border: 1px solid $link-border-color;
+                align-items: center;
+                transition: background-color 0.3s ease; // Adicionando transição de animação
+                text-decoration: none;
+
+                .link_web {
+                    color: $text-color;
+                    font-size: $font-size-label;
+                    font-weight: $font-weight-bold;
+                    line-height: $line-height-normal;
+                }
+
+                &:hover {
+                    background-color: $link-border-color; // Mudando a cor de fundo ao passar o mouse
+                }
+            }
+        }
+    }
+}
+
+#user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+    align-self: stretch;
+    width: 100%;
+
+    .label {
+        color: rgba(19, 23, 64, 0.80);
+        font-size: 18px;
+        font-weight: $font-weight-normal;
+        line-height: $line-height-normal;
+    }
+
+    .input {
+        color: #131740;
+        font-size: 20px;
+        font-weight: $font-weight-bold;
+        line-height: $line-height-normal;
+    }
+
+}
+
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+
+    .form-div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1em;
+        align-self: stretch;
+
+
+        .label {
+            color: rgba(19, 23, 64, 0.80);
+            font-size: 18px;
+            font-weight: $font-weight-normal;
+            line-height: $line-height-normal;
+        }
+
+        .input-form {
+            color: #131740;
+            font-size: 17px;
+            font-weight: 500;
+            line-height: normal;
+            padding: 0.7em;
+            width: 100%;
+        }
+    }
+
+    .input-submit {
+        color: white;
+        font-size: 17px;
+        font-weight: 600;
+        line-height: normal;
+        padding: 0.7em;
+        width: 11em;
+        background: #131740;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background: #3a4081;
+        }
+    }
+
+}
+
+.response {
+    margin-top: 2em;
+
+    #json {
+
+        margin-top: 1em;
+
+        pre {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            line-height: 1.4em;
+            border: 2px solid;
+            padding: 1em;
+            width: 100%;
+        }
+    }
+}
