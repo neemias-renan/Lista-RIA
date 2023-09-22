@@ -1,3 +1,5 @@
+<!-- QUESTÃO 2 DA LISTA DE EXERCICIOS -->
+
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +12,7 @@
 
 <body>
     <header class="nav padding-default">
-        <p><a href="../questao2.html">Lista de Usuários</a></p>
+        <p><a href="../index.htm">Lista de Usuários</a></p>
 
         <p> <a href="questao3.html">Criar novo usuário</a></p>
     </header>
@@ -64,7 +66,7 @@
                 .then((response) => response.json())
                 .then((json) => {
                     console.log(json)
-                    const jsonString = JSON.stringify(json, null, 2); 
+                    const jsonString = JSON.stringify(json, null, 2);
                     document.querySelector('#json').innerHTML = `<pre>${jsonString}</pre>`;
                 });
 
